@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Varicose Vein Detection</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 80px;
+    }
+    form {
+      margin-top: 30px;
+    }
+    input[type=file] {
+      margin: 10px;
+    }
+    input[type=submit] {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type=submit]:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 40px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Varicose Vein Detection System</h1>
+
+  <form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
+    <br>
+    <input type="submit" value="Detect">
+  </form>
+
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+</body>
+</html>
